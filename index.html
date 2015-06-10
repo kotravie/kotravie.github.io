@@ -1,0 +1,50 @@
+---
+layout: home
+---
+
+
+<div class="home">
+
+  <!-- <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+	{% for post in site.posts %}
+	  <li>
+		<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+		<h2>
+		  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		</h2>
+	  </li>
+	{% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+	<div class="recent-works">
+		<div class="container">
+			<h2 class="text-center section-title">Recent Works</h2>
+
+			<div class="row">
+
+				{% for portfolio in site.portfolios reversed limit:4 %}
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<a href="{{ portfolio.url }}" class="portfolio-card">
+							<img src="{{ site.baseurl }}/{{ portfolio.thumb }}" alt="{{ portfolio.title }}">
+							<div class="meta">
+								<div class="title">{{ portfolio.title }}</div>
+								<div class="description">{{ portfolio.description }}</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+
+			</div>
+
+			<div class="row">
+				<a href="portfolio" class="btn text-center btn-more">See More</a>
+			</div>
+		</div>
+	</div>
+
+</div>

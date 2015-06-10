@@ -1,0 +1,46 @@
+---
+layout: portfolio
+---
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+  <body class="portfolio">
+
+	{% include header.html %}
+
+	
+	<div class="post container">
+	  <div class="row">
+	  	<div class="col-md-8">
+	  		<article class="portfolio-content">
+				{{ content }}
+			</article>
+	  	</div>
+	  	<div class="col-md-4">
+	  		<div class="project-info">
+	  			<h4 class="mute-header">Project Info</h4>
+
+	  			<ul class="project-meta-list">
+					{% if page.project_date %}<li><i class="fa fa-calendar-o fa-fw"></i>&nbsp; <strong>Date: </strong> {{ page.project_date }}</li>{% endif %}
+	  				{% if page.project_date %}<li><i class="fa fa-paint-brush fa-fw"></i>&nbsp; <strong>Skills: </strong> {{ page.skills }}</li>{% endif %}
+	  				{% if page.client %}<li><i class="fa fa-group fa-fw"></i>&nbsp; <strong>Client: </strong> {{ page.client }}</li>{% endif %}
+	  				{% if page.country %}<li><i class="fa fa-globe fa-fw"></i>&nbsp; <strong>Country: </strong> {{ page.country }}</li>{% endif %}
+	  			</ul>
+
+
+				{% if page.link %}<a href="{{ page.link }}" class="btn btn-action" target="_blank">{% if page.link-title %}{{ page.link-title }}{% else %}View Project{% endif %}</a>{% endif %}
+	  		</div>
+	  	</div>
+	  </div>
+	</div>
+
+	{% include footer.html %}
+	
+  </body>
+
+</html>
+
+
+

@@ -1,0 +1,35 @@
+---
+layout: portfolio
+title:  "Aliment"
+date:   2014-01-20 14:16:03
+categories: android app
+thumb: images/aliment-thumb.png
+description: A beatiful wordpress theme for restaurants.
+
+project_date: January 2014
+client: Unsolicited
+skills: Wordpress, PHP, Javascript, HTML, CSS
+category_slugs: web
+---
+
+![Aliment]({{ site.baseurl }}/images/aliment.jpg)
+
+Aliment is a beautifully designed wordpress theme for restaurant and recipe websites. It is super-fast, clean and responsive and has the ability to be used for showing foods both as recipe and product. Configuring the theme is easy and straightforward. Dozens of shortcodes and widgets are available for building pages and posts. All kinds of pages can be built with this theme: blog, contact page, gallery page, feature page etc. The theme is ready for wordpress 3.8. But of course, it works for previous releases too.
+
+Features
+---
+* WordPress 3.8 Ready
+* Custom Post Type
+* Filterable Food Menu
+* Show food recipe, ingredients, price etc.
+* Slideshows and galleries: Owl Carousel, Boxer
+* Responsive
+* Parallax Backgrounds
+* 10+ Widgets
+* Easy Theme Configuration
+* Google Analytics
+* SEO Optimized
+* Google Fonts
+* Font Icons
+* Threaded Comments
+* Straightforward Documentation

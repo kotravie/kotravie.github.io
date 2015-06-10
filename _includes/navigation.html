@@ -1,0 +1,18 @@
+<div class="header">
+	<div class="container clearfix">
+		<a href="{{ site.baseurl }}/" class="site-title-wrapper pull-left">					
+			<span class="title-bracket">{</span><span class="site-title">{{ site.title }}</span><span class="title-bracket">}</span>
+		</a>
+		<nav class="pull-right">
+			<ul class="sf-menu">
+				<li><a href="{{ site.baseurl }}">Home</a></li>
+				<li><a href="https://medium.com/@alamkanak">Blog</a></li>
+				{% for page in site.pages %}
+					{% if page.title %}
+					<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</div>

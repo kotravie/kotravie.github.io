@@ -1,0 +1,97 @@
+<div class="contact-wrapper">
+  <div class="container">
+	<h3>Lets go work together</h3>
+	<a href="mailto:{{ site.email }}" class="btn btn-action" target="_blank">Get in touch</a>
+  </div>
+</div>
+
+<div class="social-link-wrapper">
+	<div class="container">
+		<ul>
+			{% if site.github_username %}
+			<li>
+				<a target="_blank" href="https://github.com/{{ site.github_username }}">
+					<i class="fa fa-2x fa-github"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.twitter_username %}
+			<li>
+				<a target="_blank" href="https://twitter.com/{{ site.twitter_username }}">
+					<i class="fa fa-2x fa-twitter"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.googleplus_username %}
+			<li>
+				<a target="_blank" href="https://plus.google.com/+{{ site.googleplus_username }}">
+					<i class="fa fa-2x fa-google-plus"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.linkedin_url %}
+			<li>
+				<a target="_blank" href="{{ site.linkedin_url }}">
+					<i class="fa fa-2x fa-linkedin"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.behance_username %}
+			<li>
+				<a target="_blank" href="https://www.behance.net/{{ site.behance_username }}">
+					<i class="fa fa-2x fa-behance"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.pinterest_username %}
+			<li>
+				<a target="_blank" href="https://pinterest.com/{{ site.pinterest_username }}">
+					<i class="fa fa-2x fa-pinterest"></i>
+				</a>
+			</li>
+			{% endif %}
+			{% if site.facebook_username %}
+			<li>
+				<a target="_blank" href="https://facebook.com/{{ site.facebook_username }}">
+					<i class="fa fa-2x fa-facebook"></i>
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">Copyright © 2008–2013 Raquib-ul-Alam. All rights reserved. Client work and information are the copyright and property of respective client.</div>
+			<div class="col-md-4">Like this site? <a href="https://github.com/alamkanak/alamkanak.github.io" target="_blank">Get it free from Github</a>.</div>
+		</div>
+	</div>
+</footer>
+
+<!-- <footer class="site-footer">
+
+  <div class="wrapper">
+
+	<h2 class="footer-heading">{{ site.title }}</h2>
+
+	<div class="footer-col-wrapper">
+	  <div class="footer-col  footer-col-1">
+		<ul class="contact-list">
+			<li>{{ site.title }}</li>
+		<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+		</ul>
+	  </div>
+
+	  <div class="footer-col  footer-col-3">
+		<p class="text">{{ site.description }}</p>
+	  </div>
+	</div>
+
+  </div>
+
+</footer> -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="{{ "/js/superfish.min.js" | prepend: site.baseurl }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

@@ -1,0 +1,596 @@
+/**
+* Variables and mixins
+*/
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin border-radius($radius...) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+}
+
+/**
+* Reset
+*/
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 400;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+::selection {
+    background: $selection-background-color; /* WebKit/Blink Browsers */
+    color: $selection-color;
+}
+::-moz-selection {
+    background: $selection-background-color; /* Gecko Browsers */
+    color: $selection-color;
+}
+.btn {
+    font-size: 1em;
+}
+.alternate {
+    background: $grey-color-light;
+}
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+/**
+* Site header
+*/
+.site-header .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+.site-header ul {
+    list-style: none;
+    margin: 0;
+}
+.title-bracket {
+    font-size: 2em;
+}
+.site-title-wrapper {
+    color: $text-color;
+    font-family: 'Roboto Slab', sans-serif;
+}
+.site-title-wrapper:hover, .site-title-wrapper:focus {
+    text-decoration: none;
+    color: $text-color;
+}
+.site-title {    
+    font-size: 1.5em;
+    padding: 5px 10px 0 10px;
+}
+.site-title:hover {
+    color: $text-color;
+    text-decoration: none;
+}
+.site-title-wrapper span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.title-bracket {
+    color: $brand-color;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+* Navigation menu
+*/
+ul.sf-menu li {
+    background: #fff;
+    color: $brand-color;
+    text-transform: uppercase;
+    a { color: $brand-color; padding: 0 }
+    margin: 0 0 0 30px;
+}
+
+ul.sf-menu li:hover, ul.sf-menu li.sfHover {
+    background: #fff;
+    a {color: saturate(darken($brand-color, 10%), 10%); }
+}
+.site-header nav {
+    vertical-align: middle;
+    line-height: 47px;
+}
+
+/**
+* Hero section
+*/
+.home-header {
+    background: $brand-color;
+    color: white;
+    margin: 0;
+    padding: 90px 0;
+}
+.page-header {
+    background: $brand-color;
+    color: white;
+    margin: 0;
+    padding: 40px 0;
+}
+.page-header h1 {
+    margin: 0;
+}
+
+/**
+* Social links
+*/
+.social-link-wrapper {
+    padding: 40px 0;
+    text-align: center;
+}
+.social-link-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.social-link-wrapper li {
+    display: inline-block;
+    margin: 0px 5px;
+}
+.social-link-wrapper li a {
+    color: $text-color;
+    display: block;
+    padding: 10px 20px;
+}
+.social-link-wrapper li:hover a {
+    color: $brand-color;
+}
+
+/**
+* Footer
+*/
+.contact-wrapper {
+    // background: $brand-color
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    // color: white;
+}
+
+.contact-wrapper h3 {
+    margin: 0 0 30px 0;
+}
+
+.contact-wrapper .btn-contact {
+    @include border-radius(2px);
+    @include box-shadow(0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12));
+    @include transition(0.2s ease-out);
+    border: 0px;
+    background: lighten(desaturate($brand-color, 10%), 10%);
+    padding: 12px 24px;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.contact-wrapper .btn-contact:hover {
+    @include box-shadow(0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15));
+}
+
+footer {
+    padding: 20px 0;
+    font-size: 12px;
+    border-top: 1px solid #ddd;
+}
+
+
+/**
+* Recent works
+*/
+.recent-works {
+    padding: 60px 0;
+}
+.recent-works h2 {
+    margin: 0 0 50px;
+}
+.portfolio-card {
+    @include border-radius(2px);
+    border: 1px solid #ddd;
+    @include transition(0.2s ease-out);
+    display: block;
+}
+.portfolio-card img {
+    width: 100%;
+    @include border-radius(2px 2px 0 0);
+}
+.portfolio-card {
+    color: $text-color;
+    margin-bottom: 30px;
+}
+.portfolio-card:hover, .portfolio-card:focus {
+    color: $text-color;
+    text-decoration: none;
+    background: #aaa;
+    // @include box-shadow(0 5px 9px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15));
+}
+.portfolio-card:hover .meta {
+    background: #f0f0f0;
+}
+.portfolio-card .meta {
+    padding: 12px 14px;
+    background: #fff;
+    @include border-radius(0 0 2px 2px);
+}
+.portfolio-card .title {
+    font-size: 1.2em;
+}
+.portfolio-card .description {
+    color: $grey-color;
+}
+.btn-more {
+    margin: 20px auto 0;
+    display: table;
+    text-transform: uppercase;
+    color: $brand-color;
+    @include transition(0.2s ease-out);
+    @include border-radius(2px);
+}
+.btn-more:hover {
+    background: darken(saturate($brand-color, 10%), 10%);
+    color: #fff;
+}
+.mix-it-up-container .mix {
+    display: none;
+}
+
+
+/**
+* Portfolio
+*/
+
+.page-content, .portfolio-content {
+    margin: 40px 0;
+}
+
+.portfolio-content img {
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+.portfolio-content .btn-action {
+    margin: 20px 0 0 0;
+}
+
+.btn-action {
+    @include border-radius(2px);
+    @include transition(0.2s ease-out);
+    border: 0px;
+    background: $brand-color;
+    padding: 12px 24px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.btn-action:hover, .btn-action:focus, .btn-action.focus, .btn-action:active, .btn-action.active, .open>.dropdown-toggle.btn-action {
+    background: darken(saturate($brand-color, 10%), 10%);
+    color: #fff;
+}
+
+
+
+/**
+* Portfolio - project info
+*/
+
+.project-info {
+    margin: 40px 0;
+}
+
+.mute-header {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+
+.project-meta-list {
+    padding: 0;
+    margin: 20px 0;
+}
+.project-meta-list li {
+    list-style: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+// Porfolio mix it up
+.mix-it-up-container{
+  padding: 2% 2% 0;
+  text-align: justify;
+  // font-size: 0;
+  // background: #68b8c4;
+}
+
+.mix-it-up-container:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.mix-it-up-container .mix,
+.mix-it-up-container .gap{
+  display: inline-block;
+  width: 49%;
+}
+
+.mix-it-up-container .mix{
+  text-align: left;
+  // background: #03899c;
+  margin-bottom: 2%;
+  display: none;
+}
+
+.mix-it-up-container .mix:before{
+  // content: '';
+  display: inline-block;
+  padding-top: 60%;
+}
+
+@media all and (min-width: 420px){
+  .mix-it-up-container .mix,
+  .mix-it-up-container .gap{
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 640px){
+  .mix-it-up-container .mix,
+  .mix-it-up-container .gap{
+    width: 23.5%;
+  }
+}
+
+
+// Filters
+.filters {
+    padding: 0;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+.filters li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.filters .filter {
+    padding: 10px;
+    display: block;
+    border: 1px solid #ddd;    
+    @include border-radius(2px);
+    color: $text-color;
+    text-decoration: none;
+    cursor:pointer;
+}
+.filters .filter:hover {
+    background: #eee;
+}
+
+
+// /**
+//  * Reset some basic elements
+//  */
+// body, h1, h2, h3, h4, h5, h6,
+// p, blockquote, pre, hr,
+// dl, dd, ol, ul, figure {
+//     margin: 0;
+//     padding: 0;
+// }
+
+
+
+// /**
+//  * Basic styling
+//  */
+// body {
+//     font-family: $base-font-family;
+//     font-size: $base-font-size;
+//     line-height: $base-line-height;
+//     font-weight: 300;
+//     color: $text-color;
+//     background-color: $background-color;
+//     -webkit-text-size-adjust: 100%;
+// }
+
+
+
+// /**
+//  * Set `margin-bottom` to maintain vertical rhythm
+//  */
+// h1, h2, h3, h4, h5, h6,
+// p, blockquote, pre,
+// ul, ol, dl, figure,
+// %vertical-rhythm {
+//     margin-bottom: $spacing-unit / 2;
+// }
+
+
+
+// /**
+//  * Images
+//  */
+// img {
+//     max-width: 100%;
+//     vertical-align: middle;
+// }
+
+
+
+// /**
+//  * Figures
+//  */
+// figure > img {
+//     display: block;
+// }
+
+// figcaption {
+//     font-size: $small-font-size;
+// }
+
+
+
+// /**
+//  * Lists
+//  */
+// ul, ol {
+//     margin-left: $spacing-unit;
+// }
+
+// li {
+//     > ul,
+//     > ol {
+//          margin-bottom: 0;
+//     }
+// }
+
+
+
+// /**
+//  * Headings
+//  */
+// h1, h2, h3, h4, h5, h6 {
+//     font-weight: 300;
+// }
+
+
+
+// /**
+//  * Links
+//  */
+// a {
+//     color: $brand-color;
+//     text-decoration: none;
+
+//     &:visited {
+//         color: darken($brand-color, 15%);
+//     }
+
+//     &:hover {
+//         color: $text-color;
+//         text-decoration: underline;
+//     }
+// }
+
+
+
+// /**
+//  * Blockquotes
+//  */
+// blockquote {
+//     color: $grey-color;
+//     border-left: 4px solid $grey-color-light;
+//     padding-left: $spacing-unit / 2;
+//     font-size: 18px;
+//     letter-spacing: -1px;
+//     font-style: italic;
+
+//     > :last-child {
+//         margin-bottom: 0;
+//     }
+// }
+
+
+
+// /**
+//  * Code formatting
+//  */
+// pre,
+// code {
+//     font-size: 15px;
+//     border: 1px solid $grey-color-light;
+//     border-radius: 3px;
+//     background-color: #eef;
+// }
+
+// code {
+//     padding: 1px 5px;
+// }
+
+// pre {
+//     padding: 8px 12px;
+//     overflow-x: scroll;
+
+//     > code {
+//         border: 0;
+//         padding-right: 0;
+//         padding-left: 0;
+//     }
+// }
+
+
+
+// /**
+//  * Wrapper
+//  */
+// .wrapper {
+//     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+//     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-right: $spacing-unit;
+//     padding-left: $spacing-unit;
+//     @extend %clearfix;
+
+//     @include media-query($on-laptop) {
+//         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+//         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+
+
+
+// /**
+//  * Clearfix
+//  */
+// %clearfix {
+
+//     &:after {
+//         content: "";
+//         display: table;
+//         clear: both;
+//     }
+// }
+
+
+
+// /**
+//  * Icons
+//  */
+// .icon {
+
+//     > svg {
+//         display: inline-block;
+//         width: 16px;
+//         height: 16px;
+//         vertical-align: middle;
+
+//         path {
+//             fill: $grey-color;
+//         }
+//     }
+// }

@@ -1,0 +1,73 @@
+---
+title: Portfolio
+permalink: /portfolio/
+description: Hope you like my crafts
+---
+
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body class="page">
+
+	<!-- Navigation bar and the page header -->
+	<header class="site-header">
+		{% include navigation.html %}
+		<div class="page-header">
+			<div class="container">
+				<h1>{{ page.title }}</h1>
+				<h3>{{ page.description }}</h3>
+			</div>
+		</div>
+	</header>
+
+	<div class="post container">
+
+		<ul class="filters">
+			<li>
+				<div class="filter" data-filter="all">Show All</div>
+			</li>
+			<li>
+				<div class="filter" data-filter=".android">Android</div>
+			</li>
+			<li>
+				<div class="filter" data-filter=".web">Web</div>
+			</li>
+		</ul>
+
+		<div class="portfolio">
+			<div class="row mix-it-up-container">
+				{% for portfolio in site.portfolios reversed %}
+						<a class="portfolio-card mix {{ portfolio.category_slugs }}" href="{{ portfolio.url }}">
+							<img src="{{ site.baseurl }}/{{ portfolio.thumb }}" alt="{{ portfolio.title }}">
+							<div class="meta">
+								<div class="title">{{ portfolio.title }}</div>
+								<div class="description">{{ portfolio.description }}</div>
+							</div>
+						</a>
+				{% endfor %}
+
+				<div class="gap"></div>
+				<div class="gap"></div>
+			</div>
+		</div>
+	</div>
+
+	{% include footer.html %}
+
+	<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+	<script src="{{ "/js/portfolio.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript">
+		$(function(){
+			// Instantiate MixItUp:
+			$('.mix-it-up-container').mixItUp();
+		});
+	</script>
+	</body>
+
+</html>
+
+
+
+
